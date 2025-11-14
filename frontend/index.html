@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<meta charset="UTF-8">
+<head>
+    <title>Моя страница</title>
+</head>
+<body>
+    <h1>Привет! Это фронтенд.</h1>
+    <p>Сервер говорит: <span id="counter">Загрузка...</span></p>
+
+    <script>
+        // Запрашиваем данные с бэкенда
+        fetch('http://localhost:5880')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('counter').innerText = data;
+            });
+    </script>
+</body>
+</html>
